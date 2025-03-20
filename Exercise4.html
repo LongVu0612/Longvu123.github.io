@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-font: 'Nunito', sans-serif;
+            --heading-font: 'Caveat', cursive;
+        }
+        
+        body {
+            font-family: var(--primary-font);
+        }
+        
+        h1, h2, h3.stylized {
+            font-family: var(--heading-font);
+        }
+        
+        .hero {
+            padding: 3rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        .course-list li {
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .course-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+        
+        .testimonial {
+            height: 100%;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-box {
+            width: 24px;
+            height: 24px;
+            background-color: currentColor;
+        }
+        
+        .dark-mode-toggle {
+            cursor: pointer;
+        }
+        
+        /* Dark mode specific styles */
+        [data-bs-theme="dark"] .hero h1,
+        [data-bs-theme="dark"] .hero p,
+        [data-bs-theme="dark"] h2,
+        [data-bs-theme="dark"] .education-text,
+        [data-bs-theme="dark"] .course-list li {
+            color: #fff !important;
+        }
+        
+        /* Ensure all headings and text are properly visible in dark mode */
+        [data-bs-theme="dark"] {
+            color-scheme: dark;
+        }
+        
+        /* Force text color for specific elements that need it */
+        [data-bs-theme="dark"] .text-secondary {
+            color: #adb5bd !important;
+        }
+        
+        /* Make sure the cards in dark mode have good contrast */
+        [data-bs-theme="dark"] .card {
+            background-color: #212529;
+            border-color: #495057;
+        }
+        
+        /* Ensure list items are visible in dark mode */
+        [data-bs-theme="dark"] .list-group-item {
+            background-color: #212529;
+            border-color: #495057;
+            color: #fff;
+        }
+        
+        /* Override Bootstrap's default styles to ensure content is visible */
+        [data-bs-theme="dark"] .bg-light {
+            background-color: #212529 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container shadow">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-box"></div>
+                    <span>your name</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="dark-mode-toggle">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section class="hero text-center py-5">
+            <h1>Frontend Developer</h1>
+            <p class="text-secondary">building responsive websites with modern frameworks</p>
+        </section>
+        
+        <!-- Content Grid -->
+        <div class="row g-0 border-top border-bottom">
+            <!-- Projects Column -->
+            <div class="col-md-4 border-end">
+                <div class="p-4">
+                    <h2 class="text-center mb-4">Projects</h2>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action text-center">HTML Only Portfolio</a>
+                        <a href="#" class="list-group-item list-group-item-action text-center">Calculator</a>
+                        <a href="#" class="list-group-item list-group-item-action text-center">Quiz App</a>
+                        <a href="#" class="list-group-item list-group-item-action text-center">Countdown Timer</a>
+                        <a href="#" class="list-group-item list-group-item-action text-center">Product Upcoming Page</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Work Experience Column -->
+            <div class="col-md-4 border-end">
+                <div class="p-4">
+                    <h2 class="text-center mb-4">Work Experience</h2>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">readmeai.sh</h5>
+                            <p class="card-text">Solved all the frontend projects</p>
+                            <a href="#" class="card-link">Visit my Profile</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Open-Source Work</h5>
+                            <p class="card-text">Contributed to 50 opensource projects. Made my own projects with 200 GitHub Stars.</p>
+                            <a href="#" class="card-link">Visit my GitHub Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education Column -->
+            <div class="col-md-4">
+                <div class="p-4">
+                    <h2 class="text-center mb-4">Education</h2>
+                    <p class="education-text">Graduated with 3.76 out of 4 CGPA. Won Acme Hackathon. Organized 30 sessions.</p>
+                    
+                    <p class="mt-4 education-text">Courses I took:</p>
+                    <ul class="course-list list-unstyled">
+                        <li>Object Oriented Programming</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Web Engineering</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Human Computer Interaction</li>
+                        <li>Computer Graphics</li>
+                        <li>Database Management Systems</li>
+                        <li>Distributed Database Systems</li>
+                        <li>Discreet Mathematics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Reviews Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Reviews From my Teachers</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card testimonial h-100">
+                            <div class="card-body">
+                                <p class="card-text">John doe was a brilliant student, always stood out with his assignments.</p>
+                                <p class="card-text text-secondary mb-0">Jane Doe</p>
+                                <small class="text-muted">Assistant Professor</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card testimonial h-100">
+                            <div class="card-body">
+                                <p class="card-text">John doe was a brilliant student, always stood out with his assignments.</p>
+                                <p class="card-text text-secondary mb-0">Jane Doe</p>
+                                <small class="text-muted">Assistant Professor</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card testimonial h-100">
+                            <div class="card-body">
+                                <p class="card-text">John doe was a brilliant student, always stood out with his assignments.</p>
+                                <p class="card-text text-secondary mb-0">Jane Doe</p>
+                                <small class="text-muted">Assistant Professor</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Form Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Contact Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-3 text-center">
+            <p class="mb-0">© all rights reserved 2025</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function() {
+            const htmlElement = document.documentElement;
+            const icon = this.querySelector('i');
+            
+            if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+</html>
